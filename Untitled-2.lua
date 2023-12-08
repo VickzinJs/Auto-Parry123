@@ -1,12 +1,193 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.9.16) ~  Much Love, Ferib 
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib')))()
+akeWindow({
+    Hub = {
+      Title = "Vick Hub Beta",
+      Animation = "by : vickhub"
+    },
+    Key = {
+      KeySystem = false,
+      Title = "Key System",
+      Description = "Teste",
+      KeyLink = "",
+      Keys = {"1234"},
+      Notifi = {
+        Notifications = true,
+        CorrectKey = "Running the Script...",
+        Incorrectkey = "The key is incorrect",
+        CopyKeyLink = "Copied to Clipboard"
+      }
+    }
+  })
+  
+  --[[
+    Hub = {
+      Title = "REDz HUB" -- <string> Titulo do seu script
+      Animation = "by : redz9999" -- <string> Adiciona um texto na animacão do seu HUB
+    },
+    Key = {
+      KeySystem = <bollean> Adiciona um sistema de chaves
+      Title = "Key System" <string> Adiciona um titulo ao seu sistema de chaves
+      Description = "" <string> Adiciona uma descrição ao seu sistema de chaves
+      KeyLink = "" <string> Adicina o Link onde pega a chave do HUB
+      Keys = {"1234"} <table> Adiciona as Chaves
+      Notifi = {
+        Notifications = true <boolean> Adicina notificações ao sistema de chaves
+        CorrectKey = "Running the Script..." <string> notificação quando a chave estiver correta
+        Incorrectkey = "The key is incorrect" <string> notificação quando a chave estiver incorreta
+        CopyKeyLink = "Copied to Clipboard" <string> notificação quando o link da chave fir copiado
+      }
+    }
+  ]]
+     
+  MinimizeButton({
+    Image = "",
+    Size = {40, 40},
+    Color = Color3.fromRGB(10, 10, 10),
+    Corner = true,
+    Stroke = false,
+    StrokeColor = Color3.fromRGB(255, 0, 0)
+  })
+  
+  --[[
+    Image = "" <string> imagem do botão
+    Size = {40, 40} <table> tamanho do botão
+    Color = Color3.fromRGB(10, 10, 10) <Color3>  Cor do fundo do botäo
+    Corner = true -- <boolean> Adicina um UICorner
+    Stroke = false <boolean> Adiciona um UIStroke
+    StrokeColor = Color3.fromRGB(255, 0, 0) <Color3> Cor do UIStroke
+  ]]
+      local Tab1 = Window:MakeTab({
+    Name = "MAIN",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
 
-]]--
+local Section = Tab1:AddSection({
+    Name = "Test"
+})
 
-local v0=loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))();local v1=v0:MakeWindow({Name="Vick Hub Beta",HidePremium=false,SaveConfig=true,ConfigFolder="OrionTest"});local v2=v1:MakeTab({Name="MAIN",Icon="rbxassetid://4483345998",PremiumOnly=false});local v3=v2:AddSection({Name="Test"});v2:AddButton({Name="Auto Parry",Callback=function()print("button pressed");local v4=game:GetService("Workspace");local v5=game:GetService("Players");local v6=game:GetService("RunService");local v7=game:GetService("VirtualInputManager");local v8=v4.Balls;local v9=Instance.new("Part");v9.Size=Vector3.new(16 -11 ,5,1410 -(666 + 739) );v9.Anchored=true;v9.CanCollide=false;v9.Transparency=2 -1 ;v9.BrickColor=BrickColor.new("Bright red");v9.Parent=v4;local v16=nil;local v17=false;local function v18(v43,v44)local v45=0;while true do if ((0 -0)==v45) then if (v44.Character and v44.Character:FindFirstChild("HumanoidRootPart")) then local v120=0 + 0 ;local v121;local v122;local v123;local v124;local v125;local v126;local v127;while true do if (v120==0) then v121=v44.Character.HumanoidRootPart;v122=v43.Position-v121.Position ;v120=792 -(368 + 423) ;end if (v120==3) then v127=(v126-v124)/v123.magnitude ;return v127;end if (v120==1) then v123=v43.Velocity + v121.Velocity ;v124=v43.Size.magnitude/(6 -4) ;v120=20 -(10 + 8) ;end if (v120==2) then v125=v122.magnitude;v126=math.sqrt((v124 * v124) + (v125 * v125) );v120=11 -8 ;end end end return math.huge;end end end local function v19(v46)v9.Position=v46.Position;end local function v20(v49,v50)local v51=v18(v49,v50);local v52=v49:GetAttribute("realBall");local v53=v49:GetAttribute("target");local v54=math.max(0.4,(442.6 -(416 + 26)) -(v49.Velocity.magnitude * (0.01 -0)) );if ((v51<=v54) and (v52==true) and (v53==v50.Name) and  not v17) then local v68=0;while true do if (v68==(1 + 0)) then v7(false,Enum.KeyCode.F,false,nil);v16=v49;v68=3 -1 ;end if ((438 -(145 + 293))==v68) then v7(true,Enum.KeyCode.F,false,nil);wait(0.005);v68=1;end if (v68==(432 -(44 + 386))) then v17=true;break;end end elseif ((v16==v49) and ((v51>v54) or (v52~=true) or (v53~=v50.Name))) then v17=false;end end local function v21()local v55=v5.LocalPlayer;if v55 then for v106,v107 in pairs(v8()) do v20(v107,v55);v19(v107);end end end v6.Heartbeat(v21);print("Script ran without errors");end});v2:AddButton({Name="Clash",Callback=function()local v22=0;while true do if (v22==0) then print("button pressed");loadstring(game("https://pastebin.com/raw/KB4xQe4j"))();break;end end end});v2:AddButton({Name="Anti Lag",Callback=function()print("button pressed");loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))();end});v2:AddButton({Name="Anti Afk Kick",Callback=function()local v23=0;local v24;local v25;local v26;local v27;local v28;local v29;while true do if (v23==(1491 -(998 + 488))) then v27.TextSize=20;v28.Parent=v26;v28.BackgroundColor3=Color3.new(0.176471 + 0 ,0.176471 + 0 ,0.176471);v28.Position=UDim2.new(772 -(201 + 571) ,1138 -(116 + 1022) ,0.158377,0 -0 );v28.Size=UDim2.new(0 + 0 ,1350 -980 ,0 -0 ,903 -(814 + 45) );v28.Font=Enum.Font.ArialBold;v23=14 -8 ;end if (v23==(0 + 0)) then print("button pressed");wait(0.5 + 0 );v24=Instance.new("ScreenGui");v25=Instance.new("TextLabel");v26=Instance.new("Frame");v27=Instance.new("TextLabel");v23=886 -(261 + 624) ;end if (v23==(4 -1)) then v25.TextSize=1102 -(1020 + 60) ;v26.Parent=v25;v26.BackgroundColor3=Color3.new(1423.196078 -(630 + 793) ,0.196078,0.196078 -0 );v26.Position=UDim2.new(0,0 -0 ,1.0192306,0 + 0 );v26.Size=UDim2.new(0 -0 ,370,1747 -(760 + 987) ,2020 -(1789 + 124) );v27.Parent=v26;v23=770 -(745 + 21) ;end if (v23==2) then v25.Draggable=true;v25.Position=UDim2.new(0.698610067,0 + 0 ,0.098096624 -0 ,0);v25.Size=UDim2.new(0,370,0 -0 ,1 + 51 );v25.Font=Enum.Font.SourceSansSemibold;v25.Text="Anti Afk";v25.TextColor3=Color3.new(0,1 + 0 ,1056 -(87 + 968) );v23=3;end if (v23==(17 -13)) then v27.BackgroundColor3=Color3.new(0.176471,0.176471 + 0 ,0.176471);v27.Position=UDim2.new(0,0 -0 ,1413.800455689 -(447 + 966) ,0);v27.Size=UDim2.new(0 -0 ,2187 -(1703 + 114) ,0,21);v27.Font=Enum.Font.Arial;v27.Text="Made by Headshot#5868";v27.TextColor3=Color3.new(701 -(376 + 325) ,1,1 -0 );v23=15 -10 ;end if ((1 + 0)==v23) then v28=Instance.new("TextLabel");v24.Parent=game.CoreGui;v24.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;v25.Parent=v24;v25.Active=true;v25.BackgroundColor3=Color3.new(0.176471 -0 ,14.176471 -(9 + 5) ,376.176471 -(85 + 291) );v23=1267 -(243 + 1022) ;end if (v23==(22 -16)) then v28.Text="Status: Active";v28.TextColor3=Color3.new(0 + 0 ,1181 -(1123 + 57) ,1 + 0 );v28.TextSize=20;v29=game("VirtualUser");game("Players").LocalPlayer.Idled:connect(function()v29:CaptureController();v29:ClickButton2(Vector2.new());v28.Text="Roblox kicked you but we didnt let them!";wait(256 -(163 + 91) );v28.Text="Status : Active";end);break;end end end});v2:AddButton({Name="Detect Spam V3",Callback=function()print("button pressed");getgenv().AutoDetectSpam=true;local v31=workspace("Alive",9000001418 -(1869 + 61) );local v32=game:GetService("Players");local v33=v32.LocalPlayer;local v34=game:GetService("ReplicatedStorage");local v35=v34:WaitForChild("Remotes",8999999488);local v36=v35:WaitForChild("ParryAttempt",8999999488 -0 );local v37=workspace("Balls",8999999488 -0 );local function v38()local v56=math.huge;local v57=v33.Character and v33.Character:FindFirstChild("HumanoidRootPart") ;local v58=nil;for v66,v67 in pairs(v31:GetChildren()) do if (v67:FindFirstChild("Humanoid") and (v67.Humanoid.Health>(7 + 43))) then if ((v67.Name~=v33.Name) and v57 and v67:FindFirstChild("HumanoidRootPart")) then local v128=(v67.HumanoidRootPart.Position-v57.Position).Magnitude;if (v128<=v56) then local v129=0 -0 ;while true do if (v129==0) then v56=v128;v58=v67;break;end end end end end end return v58;end local function v39()task.spawn(function()if (IsAlive() and ( #v31:GetChildren()>(1 + 0))) then local v109=0;local v110;local v111;local v112;local v113;while true do if (v109==0) then v110=1474.5 -(1329 + 145) ;v111=CFrame.new();v109=972 -(140 + 831) ;end if (v109==1) then v112={enzo=Vector3.new()};v113={1218 -(15 + 703) ,938 -(262 + 176) };v109=1723 -(345 + 1376) ;end if (v109==(690 -(198 + 490))) then if (v110 and v111 and v112 and v113) then v36:FireServer(v110,v111,v112,v113);end break;end end end end);end task.spawn(function()while task.wait() do if (getgenv().SpamClickA and getgenv().AutoDetectSpam) then v39();end end end);local v40=0 -0 ;local v41=0;local function v42(v59)local v60=0 -0 ;local v61;while true do if (v60==(1206 -(696 + 510))) then v61="";v59:GetPropertyChangedSignal("Position"):Connect(function()local v115=0 -0 ;local v116;local v117;while true do if (v115==1) then if (v59 and v116 and v117 and v117.PrimaryPart) then local v132=0;local v133;local v134;while true do if (v132==1) then v41=(1287 -(1091 + 171)) + math.clamp(v40/(1 + 2) ,0 -0 ,82 -57 ) ;if ((v40>(376 -(123 + 251))) and (v133<v41) and (v134<(273 -218))) then getgenv().SpamClickA=true;else getgenv().SpamClickA=false;end break;end if (v132==(698 -(208 + 490))) then v133=(v116.Position-v117.PrimaryPart.Position).Magnitude;v134=(v116.Position-v59.Position).Magnitude;v132=1 + 0 ;end end end break;end if ((0 + 0)==v115) then v116=v33 and v33.Character and v33.Character.PrimaryPart ;v117=v38();v115=837 -(660 + 176) ;end end end);v60=1 + 0 ;end if (v60==1) then v59:GetAttributeChangedSignal("target"):Connect(function()local v118=202 -(14 + 188) ;local v119;while true do if (v118==(675 -(534 + 141))) then v61=v59("target");v119=v38();v118=1;end if (v118==1) then if v119 then if ((v61==v119.Name) or (v61==v33.Name)) then v40=v40 + 1 + 0 ;else v40=0 + 0 ;end end break;end end end);break;end end end for v62,v63 in pairs(v37:GetChildren()) do if (v63 and  not v63:GetAttribute("realBall")) then return;end v42(v63);end v37.ChildAdded:Connect(function(v64)local v65=0 + 0 ;while true do if (1==v65) then v40=0;v42(v64);break;end if (v65==0) then if  not getgenv().AutoDetectSpam then return;elseif (v64 and  not v64:GetAttribute("realBall")) then return;end getgenv().SpamClickA=false;v65=1;end end end);end});v0:Init();
+Tab1:AddButton({
+    Name = "Auto Parry",
+    Callback = function()
+              print("button pressed")
+
+              local workspace = game:GetService("Workspace")
+              local players = game:GetService("Players")
+              local runService = game:GetService("RunService")
+              local vim = game:GetService("VirtualInputManager")
+              
+              local ballFolder = workspace.Balls
+              local indicatorPart = Instance.new("Part")
+              indicatorPart.Size = Vector3.new(5, 5, 5)
+              indicatorPart.Anchored = true
+              indicatorPart.CanCollide = false
+              indicatorPart.Transparency = 1
+              indicatorPart.BrickColor = BrickColor.new("Bright red")
+              indicatorPart.Parent = workspace
+
+              local lastBallPressed = nil
+local isKeyPressed = false
+
+local function calculatePredictionTime(ball, player)
+    if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+        local rootPart = player.Character.HumanoidRootPart
+        local relativePosition = ball.Position - rootPart.Position
+        local velocity = ball.Velocity + rootPart.Velocity 
+        local a = (ball.Size.magnitude / 2) 
+        local b = relativePosition.magnitude
+        local c = math.sqrt(a * a + b * b)
+        local timeToCollision = (c - a) / velocity.magnitude
+        return timeToCollision
+    end
+    return math.huge
+end
+
+local function updateIndicatorPosition(ball)
+    indicatorPart.Position = ball.Position
+end
+
+local function checkProximityToPlayer(ball, player)
+    local predictionTime = calculatePredictionTime(ball, player)
+    local realBallAttribute = ball:GetAttribute("realBall")
+    local target = ball:GetAttribute("target")
+
+    local ballSpeedThreshold = math.max(0.4, 0.6 - ball.Velocity.magnitude * 0.01)
+
+    if predictionTime <= ballSpeedThreshold and realBallAttribute == true and target == player.Name and not isKeyPressed then
+        vim:SendKeyEvent(true, Enum.KeyCode.F, false, nil)
+        wait(0.005)
+        vim:SendKeyEvent(false, Enum.KeyCode.F, false, nil)
+        lastBallPressed = ball
+        isKeyPressed = true
+
+    elseif lastBallPressed == ball and (predictionTime > ballSpeedThreshold or realBallAttribute ~= true or target ~= player.Name) then
+        isKeyPressed = false
+    end
+end
+
+local function checkBallsProximity()
+    local player = players.LocalPlayer
+    if player then
+        for _, ball in pairs(ballFolder:GetChildren()) do
+            checkProximityToPlayer(ball, player)
+            updateIndicatorPosition(ball)
+        end
+    end
+end
+
+runService.Heartbeat:Connect(checkBallsProximity)
+
+print("Script ran without errors")
+      end
+})
+
+Tab1:AddButton({
+    Name = "Clash",
+    Callback = function()
+              print("button pressed")
+
+loadstring(game:HttpGet('https://pastebin.com/raw/KB4xQe4j'))()
+      end
+})
+
+Tab1:AddButton({
+    Name = "Anti Lag",
+    Callback = function()
+              print("button pressed")
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
+      end
+})
+
+Tab1:AddButton({
+    Name = "Anti Afk Kick",
+    Callback = function()
+              print("button pressed")
+
+              wait(0.5)local ba=Instance.new("ScreenGui")
+              local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+              local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+              ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+              
+              ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+              ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,370,0,52)
+              ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti Afk"ca.TextColor3=Color3.new(0,1,1)
+              
+              ca.TextSize=22;da.Parent=ca
+              da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+              da.Size=UDim2.new(0,370,0,107)_b.Parent=da
+              _b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+              _b.Size=UDim2.new(0,370,0,21)_b.Font=Enum.Font.Arial;_b.Text="Made by Headshot#5868"
+              _b.TextColor3=Color3.new(0,1,1)_b.TextSize=20;ab.Parent=da
+              
+              ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377,0)
+              ab.Size=UDim2.new(0,370,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Active"
+              ab.TextColor3=Color3.new(0,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+              game:service'Players'.LocalPlayer.Idled:connect(function()
+              bb:CaptureController()bb:ClickButton2(Vector2.new())
+              ab.Text="Roblox kicked you but we didnt let them!"wait(2)ab.Text="Status : Active"end)
+                   end
+
+              })
+
+OrionLib:Init()
