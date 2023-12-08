@@ -129,6 +129,7 @@ Tab1:AddButton({
               game:service'Players'.LocalPlayer.Idled:connect(function()
               bb:CaptureController()bb:ClickButton2(Vector2.new())
               ab.Text="Roblox kicked you but we didnt let them!"wait(2)ab.Text="Status : Active"end)
+              end
 
               })
 
