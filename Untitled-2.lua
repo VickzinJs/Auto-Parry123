@@ -201,7 +201,7 @@ AddButton(Main, {
 AddButton(Main, {
   Name = "Anti Lag Beta",
   Callback = function()
-    print("Olá")
+    print("opa")
 
     _G.Settings = {
       Players = {
@@ -554,3 +554,18 @@ AddButton(Main, {
       end
         end
       })      
+
+      AddButton(Main, {
+        Name = "Abrir Caixa De Espada",
+        Callback = function()
+          print("")
+
+          local args = {
+            [1] = "OpeningCase",
+            [2] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+      end
+
+    })
